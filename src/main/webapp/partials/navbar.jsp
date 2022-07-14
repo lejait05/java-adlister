@@ -11,6 +11,6 @@
     <title>Navbar</title>
 </head>
 <body>
-
+<nav> Nav bar location</nav>
 </body>
 </html>

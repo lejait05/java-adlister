@@ -13,9 +13,9 @@
 <body>
 <h1> Login Page </h1>
 <form action="/login" method="post">
-    <label for="username"> Username</label>
+    <label for="username"> Username: </label>
     <input id="username" type="text" name="username" placeholder="Enter username">
-    <label for="password">Password</label>
+    <label for="password">Password: </label>
     <input id="password" type="text" name="password" placeholder="Enter password">
     <button>Login</button>
 </form>
