@@ -4,13 +4,19 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "HelloWorldServlet", value = "/hello")
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet(name = "GreetingServlet", value = "/greeting")
+public class GreetingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-response.setContentType("text/html");
+
+        String name = request.getParameter("name");
+        request.setAttribute("name", name);
+        if (name == null){
+            name = "User";
+        }
         PrintWriter out = response.getWriter();
-        out.println("<h1> Hello, World !!!!</h1>");
+        response.setContentType("text/html");
+        out.println("<h1> Howdy, "  +  name + " </h1>") ;
     }
 
 //    @Override
