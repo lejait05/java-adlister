@@ -4,7 +4,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "AlbumsServlet", value = "/authors")
+@WebServlet(name = "AlbumsServlet", value = "/albums")
 public class AlbumsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
