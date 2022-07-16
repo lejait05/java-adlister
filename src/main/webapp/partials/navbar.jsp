@@ -11,6 +11,14 @@
     <title>Navbar</title>
 </head>
 <body>
-<nav> Nav bar location</nav>
+<nav>
+    <ul>
+        <li>My site</li>
+        <li>Hello</li>
+        <li> this is it</li>
+        <li> hiyeee</li>
+        <li> i like it</li>
+    </ul>
+</nav>
 </body>
 </html>
