@@ -1,3 +1,5 @@
+package adlister;
+
 public class DaoFactory {
     private static Ads adsDao;
 private static Authors authorsDao;
