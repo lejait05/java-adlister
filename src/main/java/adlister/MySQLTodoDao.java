@@ -45,6 +45,20 @@ public class MySQLTodoDao implements Todos {
 
     @Override
     public long createTodo(Todo todo) {
-        return 0;
+        long createdId = 0;
+        String query = "INSERT INTO todos(name)  VALUES " + " (' " + todo.getName() + " ' )";
+        try{
+            Statement statement = connection.createStatement();
+        statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+        ResultSet rs = statement.getGeneratedKeys();
+        if (rs.next()){
+            createdId = rs.getLong(1);
+        }
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+
+        return createdId;
     }
+
 }

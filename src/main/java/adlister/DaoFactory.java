@@ -1,6 +1,13 @@
 package adlister;
 
 public class DaoFactory {
+    private static Todos todoDao;
+    public static Todos getTodosDao(){
+        if (todoDao == null){
+            todoDao = new MySQLTodoDao(new Config());
+        }
+        return todoDao;
+    }
 //    private static Ads adsDao;
 //private static Authors authorsDao;
 //private static Quotes quotesDao;
