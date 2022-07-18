@@ -2,29 +2,45 @@ package adlister;
 
 import com.mysql.cj.jdbc.Driver;
 
-import javax.servlet.jsp.jstl.core.Config;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLTodoDao implements Todos {
     private Connection connection;
 
-    public MySQLTodoDao(){
+    public MySQLTodoDao(Config config){
         try{
-            Config config = new Config();
-
-        DriverManager.registerDriver(new Driver());
-        this.connection = DriverManager.getConnection();
-        config.getUrl(), config.getUser(), config.getPassword();
+            DriverManager.registerDriver(new Driver());
+        this.connection = DriverManager.getConnection(
+        config.getUrl(), config.getUser(), config.getPassword());
     } catch (SQLException e) {
-            throw new RuntimeException(e);
+           e.printStackTrace();
         }
     }
     @Override
     public List<Todo> findAllTodos() {
-        return null;
+        List<Todo> todos = new ArrayList<>();
+        String query = "SELECT * FROM todos";
+        try{
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()){
+                Todo todo = new Todo(rs.getString("name"));
+                todos.add(todo);
+            }
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+        return todos;
+    }
+
+    public static void main(String[] args) {
+        Todos todoDao = new MySQLTodoDao(new Config());
+        List<Todo> todos = todoDao.findAllTodos();
+        for (Todo todo : todos){
+            System.out.println(todo.getName());
+        }
     }
 
     @Override
