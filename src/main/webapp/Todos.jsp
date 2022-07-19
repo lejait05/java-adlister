@@ -19,7 +19,9 @@
     </c:forEach>
 </ul>
 <form method="post">
-    <label
+    <label for="todo">Todo</label>
+    <input type="text" name="todo" id="todo" >
+    <button type="submit">Submit</button>
 </form>
 </body>
 </html>
