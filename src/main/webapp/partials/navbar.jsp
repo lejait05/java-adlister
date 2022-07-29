@@ -12,7 +12,7 @@
 </head>
 <body>
 <nav>
-    <ul>
+    <ul >
         <li>My site</li>
         <li>Hello</li>
         <li> this is it</li>

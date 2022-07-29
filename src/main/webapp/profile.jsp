@@ -6,11 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="partials/styles.html"%>
 <html>
 <head>
     <title>Profile</title>
 </head>
 <body>
+<jsp:include page="partials/navbar.jsp" />
 <h1>Profile Page</h1>
 <p>coool stuff that nobody will really see!!!!! yay</p>
 </body>
