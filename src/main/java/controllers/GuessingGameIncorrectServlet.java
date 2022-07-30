@@ -10,7 +10,7 @@ public class GuessingGameIncorrectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 String message = " You Lose!!!!";
-        request.setAttribute("message " + message);
+        request.setAttribute("message ", message);
     }
 
     @Override

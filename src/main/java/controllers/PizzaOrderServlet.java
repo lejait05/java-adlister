@@ -17,17 +17,18 @@ view.forward(request,response);
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-String crust = request.getParameter("crust");
+        String size = request.getParameter("size");
+        String crust = request.getParameter("crust");
 String sauce = request.getParameter("sauce");
-String size = request.getParameter("size");
 String[] toppings = request.getParameterValues("toppings");
 String address = request.getParameter("address");
+String number = request.getParameter("number");
 
-
-        System.out.println("crust = " + crust);
         System.out.println("size = " + size);
+        System.out.println("crust = " + crust);
         System.out.println("sauce = " + sauce);
         System.out.println("address = " + address);
+        System.out.println("number = " + number);
 //        System.out.println("toppings = " + Arrays.toString(toppings));
         for (String topping: toppings){
             System.out.println("topping = " + topping);

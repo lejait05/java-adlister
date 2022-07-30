@@ -10,5 +10,5 @@ public class Employee implements Serializable {
     private char gender;
     private Date birthDate;
     private Date hireDate;
-    public Employee
+
 }

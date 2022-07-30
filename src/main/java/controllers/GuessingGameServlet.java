@@ -18,6 +18,8 @@ int randomNumber = (int)(Math.random()* 3) + 1;
 int guess = Integer.parseInt(request.getParameter("guess"));
 if ( guess == randomNumber){
     response.sendRedirect("correct");
-}else
+}else{
+    response.sendRedirect("/incorrect");
+}
     }
 }
