@@ -11,6 +11,8 @@ public class GuessingGameIncorrectServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 String message = " You Lose!!!!";
         request.setAttribute("message ", message);
+        RequestDispatcher view = request.getRequestDispatcher("/views/guess-result.jsp");
+        view.forward(request,response);
     }
 
     @Override

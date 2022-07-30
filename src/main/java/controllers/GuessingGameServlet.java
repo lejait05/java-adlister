@@ -10,6 +10,7 @@ public class GuessingGameServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 RequestDispatcher view = request.getRequestDispatcher("/views/guess-form.jsp");
+view.forward(request,response);
     }
 
     @Override

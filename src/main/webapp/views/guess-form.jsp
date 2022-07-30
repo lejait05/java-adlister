@@ -14,6 +14,7 @@
 <form method="POST" action ="/guess">
     <h1>Guess between 1 and 3 </h1>
     <input type="number" name="guess" >
+    <button type="submit">Submit Your Guess!</button>
 </form>
 </body>
 </html>

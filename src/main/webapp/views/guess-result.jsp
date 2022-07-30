@@ -12,5 +12,6 @@
 </head>
 <body>
 <h1> Your result is </h1>
+<p>${message}</p>
 </body>
 </html>
