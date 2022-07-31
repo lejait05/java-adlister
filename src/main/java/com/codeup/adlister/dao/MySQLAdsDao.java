@@ -3,7 +3,7 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 
-import javax.servlet.jsp.jstl.core.Config;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -43,7 +43,8 @@ public class MySQLAdsDao implements Ads {
     public Long insert(Ad ad) {
         try {
 
-            PreparedStatement stmt = connection.prepareStatement();
+            String sql =  "INSERT INTO ads(user_id, title, description) VALUES(?,?,?)";
+            PreparedStatement stmt = connection.prepareStatement(sql);
             stmt.executeUpdate(createInsertQuery(ad), Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
